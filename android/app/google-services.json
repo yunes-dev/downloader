@@ -1,0 +1,120 @@
+{
+  "project_info": {
+    "project_number": "1075284464066",
+    "project_id": "number-alglows-df550",
+    "storage_bucket": "number-alglows-df550.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1075284464066:android:4922a5a18ca5e5074d065b",
+        "android_client_info": {
+          "package_name": "com.mc_downloader1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1075284464066-d9e4tgp4hv80a808eor998vkj6suoodr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgyWHg5RA_6c0LuhF7l99_yCaFU2vPt_M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1075284464066-d9e4tgp4hv80a808eor998vkj6suoodr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1075284464066-fim34m7jovhjh3dg83ucdfbvlv49uh1k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.numbersalghowsyemen"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1075284464066:android:a9af4b1207f0dc304d065b",
+        "android_client_info": {
+          "package_name": "com.meta_chat_gpt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1075284464066-d9e4tgp4hv80a808eor998vkj6suoodr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgyWHg5RA_6c0LuhF7l99_yCaFU2vPt_M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1075284464066-d9e4tgp4hv80a808eor998vkj6suoodr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1075284464066-fim34m7jovhjh3dg83ucdfbvlv49uh1k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.numbersalghowsyemen"
+              }
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-8197942150790160~7719785685"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1075284464066:android:914310cf68f3adac4d065b",
+        "android_client_info": {
+          "package_name": "com.numbersalghowsyemen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1075284464066-d9e4tgp4hv80a808eor998vkj6suoodr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgyWHg5RA_6c0LuhF7l99_yCaFU2vPt_M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1075284464066-d9e4tgp4hv80a808eor998vkj6suoodr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1075284464066-fim34m7jovhjh3dg83ucdfbvlv49uh1k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.numbersalghowsyemen"
+              }
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-8197942150790160~1522042990"
+    }
+  ],
+  "configuration_version": "1"
+}
