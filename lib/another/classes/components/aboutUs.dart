@@ -26,10 +26,9 @@ class AboutUs extends StatelessWidget {
             ),
           ],
         )),
-        title: const Text('اتصل بنا',
-            style: TextStyle(
-              fontFamily: 'Air',
-            )),
+        title: const Text(
+          'اتصل بنا',
+        ),
         centerTitle: true,
       ),
       body: Container(

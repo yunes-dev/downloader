@@ -53,11 +53,9 @@ class ListTitleDownLOader extends StatelessWidget {
                       context: context,
                       delegate: SearchPage(
                           searchStyle: TextStyle(
-                            fontFamily: 'Cairo',
                             color: Colors.white,
                           ),
                           barTheme: ThemeData(
-                            fontFamily: 'Air',
                             cardColor: Colors.white,
                             inputDecorationTheme: InputDecorationTheme(
                               hintStyle: TextStyle(

@@ -1,4 +1,4 @@
-package com.mc_downloader1
+package com.mc_downloader22
 
 import android.annotation.SuppressLint
 import android.app.*
@@ -18,7 +18,7 @@ import android.view.ViewGroup.LayoutParams
 import android.widget.ImageView
 import androidx.cardview.widget.CardView
 import androidx.core.app.NotificationCompat
-import com.mc_downloader1.MainActivity.Companion.ACTION_STOP_FOREGROUND
+import com.mc_downloader22.MainActivity.Companion.ACTION_STOP_FOREGROUND
 import io.flutter.embedding.engine.FlutterEngineCache
 import io.flutter.plugin.common.MethodChannel
 import java.util.Timer

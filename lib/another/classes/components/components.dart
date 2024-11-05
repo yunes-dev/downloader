@@ -169,7 +169,7 @@ class Components {
     try {
       await AppVersionUpdate.checkForUpdates(
         appleId: '1459706595',
-        playStoreId: 'com.mc_downloader1',
+        playStoreId: 'com.mc_downloader22',
         country: 'ye',
       ).then((result) async {
         if (result.canUpdate!) {

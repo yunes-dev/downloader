@@ -1,4 +1,4 @@
-package com.mc_downloader1
+package com.mc_downloader22
 import android.content.ClipboardManager
 import android.content.Intent
 import android.util.Patterns

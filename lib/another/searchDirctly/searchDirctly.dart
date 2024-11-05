@@ -6,7 +6,6 @@ import 'package:download_every_thing/another/download/otherYoutubeDownloader.dar
 import 'package:download_every_thing/another/searchDirctly/whatsapp.dart';
 import 'package:download_every_thing/another/webviewSearch/searchinList.dart';
 import 'package:download_every_thing/another/webviewSearch/webViewSearch.dart';
-import 'package:download_every_thing/main.dart';
 import 'package:extractor/extractor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -33,7 +32,6 @@ import '../download/youTubeDownload.dart';
 import '../classes/components/processData.dart';
 import '../tabsWebVewPop/providerTabPop.dart';
 import 'package:http/http.dart' as http;
-import 'package:html/parser.dart' show parse;
 
 class Whatsapp {
   String name;
@@ -43,9 +41,9 @@ class Whatsapp {
 }
 
 class SearchDirctly extends StatefulWidget {
-  String url;
-  String typeWork;
-  SearchDirctly({super.key, required this.url, required this.typeWork});
+  final String url;
+  final String typeWork;
+  const SearchDirctly({super.key, required this.url, required this.typeWork});
   @override
   State<SearchDirctly> createState() => _SearchDirctlyState();
 }
@@ -501,7 +499,7 @@ class _SearchDirctlyState extends State<SearchDirctly>
                                       ),
                                     ],
                                     gradient: _elementeWidget.gradient),
-                                width: 150,
+                                width: 250,
                                 child: Text(
                                   'تحميل واتساب عمر',
                                   style: TextStyle(

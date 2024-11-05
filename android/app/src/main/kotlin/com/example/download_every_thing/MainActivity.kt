@@ -1,4 +1,4 @@
-package com.mc_downloader1
+package com.mc_downloader22
 import io.flutter.embedding.android.FlutterActivity
 import android.content.ClipboardManager
 import io.flutter.embedding.engine.FlutterEngine
@@ -96,7 +96,7 @@ override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) 
     }
 }
 companion object {
-    const val ACTION_STOP_FOREGROUND = "com.mc_downloader1.stopfloating.service"
+    const val ACTION_STOP_FOREGROUND = "com.mc_downloader22.stopfloating.service"
     const val REQUEST_CODE_DRAW_PREMISSION = 2
 }
 

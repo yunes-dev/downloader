@@ -50,12 +50,12 @@ class ClassStaticLists {
         search_search: 'https://www.google.com/',
         date_search: DateTime.now().toString(),
         img: "assets/images/google.png"),
-    Search(
-        id_search: '2',
-        nameUrl: 'Youtube',
-        search_search: 'https://youtube.com/',
-        date_search: DateTime.now().toString(),
-        img: "assets/images/youtube.png"),
+    // Search(
+    //     id_search: '2',
+    //     nameUrl: 'Youtube',
+    //     search_search: 'https://youtube.com/',
+    //     date_search: DateTime.now().toString(),
+    //     img: "assets/images/youtube.png"),
     Search(
         id_search: '3',
         nameUrl: 'Tiktok',

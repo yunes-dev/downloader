@@ -79,8 +79,7 @@ class _Browsec extends StatelessWidget {
       trailing: check,
       title: Text(
         title,
-        style: TextStyle(
-            fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: 'Air'),
+        style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold),
         //   textAlign: TextAlign.center,
       ),
     ));

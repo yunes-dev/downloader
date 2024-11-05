@@ -82,7 +82,14 @@ class _SplashAppState extends State<SplashApp>
           ],
         ),
       ),
-      bottomSheet: Text("medeBy@metacode-2023"),
+      bottomSheet: Container(
+          padding: const EdgeInsets.only(left: 5, right: 5),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20), topRight: Radius.circular(20)),
+            color: Colors.white,
+          ),
+          child: Text("medeBy@metacode-2024")),
     );
   }
 }

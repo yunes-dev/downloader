@@ -102,9 +102,9 @@ class _SettingGeneralState extends State<SettingGeneral> {
               title: const Text(
                 "تغيير مسار الحفظ",
                 style: TextStyle(
-                    fontSize: 15.0,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Air'),
+                  fontSize: 15.0,
+                  fontWeight: FontWeight.bold,
+                ),
                 //   textAlign: TextAlign.center,
               ),
               subtitle: Text(

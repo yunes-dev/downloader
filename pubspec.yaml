@@ -3,7 +3,7 @@ description: A new Flutter project.
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 1.0.4+4
+version: 1.0.3+3
 
 environment:
   sdk: '>=3.0.6 <4.0.0'
@@ -86,7 +86,7 @@ dependencies:
   #mime: ^1.0.2
   # cached_network_image: ^2.5.0
   #flutter_colorpicker: ^1.0.3
-  intl: ^0.18.0
+  intl: ^0.19.0
   #uuid: ^3.0.6
   #collection: ^1.16.0
   #package_info_plus: ^3.1.2
@@ -131,7 +131,8 @@ dependencies:
   #dghub_web_scrapper: ^0.0.1
   flutter_onboarding_slider: ^1.0.10
   onboarding_overlay: ^3.2.1
-  filesystem_picker: ^3.1.0
+  filesystem_picker: ^4.1.0
+  #filesystem_picker: ^3.1.0
   #flutter_background_service: ^5.0.2
   #flutter_foreground_task: ^6.0.0+1
   #flutter_background_executor: ^1.0.0
@@ -179,11 +180,8 @@ flutter:
   
   assets:
      - assets/images/
-  #   - assets/5MB-test.ZIP
-  # fonts:
-  #   - family: Air
-  #     fonts:
-  #       - asset: fonts/Air.ttf
-  #   - family: Cairo
-  #     fonts:
-  #       - asset: fonts/Amiri.ttf
+
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo-Regular.ttf

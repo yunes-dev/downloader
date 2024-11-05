@@ -20,7 +20,9 @@ class ListCard extends StatelessWidget {
       title: Text(
         aboutUsModel.name,
         style: const TextStyle(
-            fontSize: 20.0, fontWeight: FontWeight.bold, fontFamily: 'Air'),
+          fontSize: 20.0,
+          fontWeight: FontWeight.bold,
+        ),
         textAlign: TextAlign.center,
       ),
       subtitle: Container(),

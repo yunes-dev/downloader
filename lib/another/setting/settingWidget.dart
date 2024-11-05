@@ -27,10 +27,9 @@ class SettingWidget extends StatelessWidget {
             ),
           ],
         )),
-        title: const Text('الاعدادت',
-            style: TextStyle(
-              fontFamily: 'Air',
-            )),
+        title: const Text(
+          'الاعدادت',
+        ),
         centerTitle: true,
       ),
       body: Container(
@@ -62,9 +61,9 @@ class SettingWidget extends StatelessWidget {
                     title: Text(
                       setting.name,
                       style: const TextStyle(
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Air'),
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.bold,
+                      ),
                       //   textAlign: TextAlign.center,
                     ),
                     // subtitle: Container(),

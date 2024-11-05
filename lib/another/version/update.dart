@@ -24,9 +24,6 @@ class VersionCheckPage extends StatelessWidget {
         )),
         title: const Text(
           "تحديث التطبيق",
-          style: TextStyle(
-            fontFamily: 'Air',
-          ),
           textAlign: TextAlign.right,
         ),
         centerTitle: true,
@@ -39,7 +36,6 @@ class VersionCheckPage extends StatelessWidget {
               'يتوفر اصدار حديث لهذا التطبيق :',
               style: TextStyle(
                   color: Colors.black,
-                  fontFamily: 'Air',
                   fontSize: 20,
                   fontWeight: FontWeight.bold),
             ),
@@ -52,7 +48,7 @@ class VersionCheckPage extends StatelessWidget {
               onPressed: () async {
                 try {
                   await launch(
-                    "https://play.google.com/store/apps/details?id=com.mc_downloader",
+                    "https://play.google.com/store/apps/details?id=com.mc_downloader22",
                     enableJavaScript: true,
                   );
                 } catch (e) {
@@ -62,7 +58,6 @@ class VersionCheckPage extends StatelessWidget {
               child: const Text(
                 'تحديث',
                 style: TextStyle(
-                  fontFamily: 'Air',
                   fontSize: 20,
                 ),
               ),

@@ -88,7 +88,8 @@ class ShowListDownloader extends StatelessWidget {
                                         2, // Specify the maximum number of lines
                                     overflow: TextOverflow.ellipsis,
                                     style: const TextStyle(
-                                        fontSize: 13, fontFamily: 'Cairo'),
+                                      fontSize: 13,
+                                    ),
                                   ),
                                 ),
 
@@ -237,7 +238,6 @@ class ShowListDownloader extends StatelessWidget {
                                         fileModel.txtMassege,
                                         style: TextStyle(
                                             fontSize: 10,
-                                            fontFamily: 'Cairo',
                                             color: fileModel.downloading ==
                                                         'paused' ||
                                                     fileModel.downloading ==

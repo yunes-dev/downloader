@@ -1,466 +1,466 @@
-// // // ignore_for_file: avoid_print
+// // ignore_for_file: avoid_print
 
-// // import 'dart:async';
-// // import 'dart:convert';
-// // import 'dart:isolate';
-// // import 'dart:math';
+// import 'dart:async';
+// import 'dart:convert';
+// import 'dart:isolate';
+// import 'dart:math';
 
-// // import 'package:dio/dio.dart';
-// // import 'package:download_every_thing/another/notification/notification_utils.dart';
-// // import 'package:easy_isolate/easy_isolate.dart';
-// // import 'package:flutter/material.dart';
-// // import 'package:isolate_manager/isolate_manager.dart';
+// import 'package:dio/dio.dart';
+// import 'package:download_every_thing/another/notification/notification_utils.dart';
+// import 'package:easy_isolate/easy_isolate.dart';
+// import 'package:flutter/material.dart';
+// import 'package:isolate_manager/isolate_manager.dart';
 
-// // import 'another/classes/components/components.dart';
+// import 'another/classes/components/components.dart';
 
-// // // @pragma('vm:entry-point')
-// // // int countEven(int num) {
-// // //   print('count');
-// // //   int count = 0;
-// // //   while (num > 0) {
-// // //     if (num % 2 == 0) {
-// // //       count++;
-// // //     }
-// // //     num--;
-// // //   }
-// // //   return count;
-// // // }
+// @pragma('vm:entry-point')
+// int countEven(int num) {
+//   print('count');
+//   int count = 0;
+//   while (num > 0) {
+//     if (num % 2 == 0) {
+//       count++;
+//     }
+//     num--;
+//   }
+//   return count;
+// }
 
-// // /// This must be a static or top-level function
-// // ///
-// // /// This function is very expensive to calculate, so I can test for un-blocking UI feature
-// // // @pragma('vm:entry-point')
-// // // Future<int> fibonacciRescusiveFuture(int n) async {
-// // //   if (n == 0) return 0;
-// // //   if (n <= 2) return 1;
+/// This must be a static or top-level function
+///
+/// This function is very expensive to calculate, so I can test for un-blocking UI feature
+// @pragma('vm:entry-point')
+// Future<int> fibonacciRescusiveFuture(int n) async {
+//   if (n == 0) return 0;
+//   if (n <= 2) return 1;
 
-// // //   // Magic code: This is only for non-blocking UI on Web platform
-// // //   await Future.delayed(Duration.zero);
+//   // Magic code: This is only for non-blocking UI on Web platform
+//   await Future.delayed(Duration.zero);
 
-// // //   return await fibonacciRescusiveFuture(n - 1) +
-// // //       await fibonacciRescusiveFuture(n - 2);
-// // // }
+//   return await fibonacciRescusiveFuture(n - 1) +
+//       await fibonacciRescusiveFuture(n - 2);
+// }
 
-// // /// This must be a static or top-level function
-// // // @pragma('vm:entry-point')
-// // // Future<int> fibonacciFuture(int n) async {
-// // //   if (n == 0) return 0;
-// // //   if (n <= 2) return 1;
+/// This must be a static or top-level function
+// @pragma('vm:entry-point')
+// Future<int> fibonacciFuture(int n) async {
+//   if (n == 0) return 0;
+//   if (n <= 2) return 1;
 
-// // //   double n1 = 0, n2 = 1, n3 = 1;
+//   double n1 = 0, n2 = 1, n3 = 1;
 
-// // //   for (int i = 2; i <= n; i++) {
-// // //     n3 = n1 + n2;
-// // //     n1 = n2;
-// // //     n2 = n3;
+//   for (int i = 2; i <= n; i++) {
+//     n3 = n1 + n2;
+//     n1 = n2;
+//     n2 = n3;
 
-// // //     // Magic code: This is only for non-blocking UI on Web platform
-// // //     await Future.delayed(Duration.zero);
-// // //   }
+//     // Magic code: This is only for non-blocking UI on Web platform
+//     await Future.delayed(Duration.zero);
+//   }
 
-// // //   return n3.round();
-// // // }
+//   return n3.round();
+// }
 
-// // /// This must be a static or top-level function
-// // // @pragma('vm:entry-point')
-// // // int fibonacci(int n) {
-// // //   if (n == 0) return 0;
-// // //   if (n == 1 || n == 2) return 1;
+/// This must be a static or top-level function
+// @pragma('vm:entry-point')
+// int fibonacci(int n) {
+//   if (n == 0) return 0;
+//   if (n == 1 || n == 2) return 1;
 
-// // //   int n1 = 0, n2 = 1, n3 = 1;
+//   int n1 = 0, n2 = 1, n3 = 1;
 
-// // //   for (int i = 2; i <= n; i++) {
-// // //     n3 = n1 + n2;
-// // //     n1 = n2;
-// // //     n2 = n3;
-// // //   }
+//   for (int i = 2; i <= n; i++) {
+//     n3 = n1 + n2;
+//     n1 = n2;
+//     n2 = n3;
+//   }
 
-// // //   return n3.round();
-// // // }
+//   return n3.round();
+// }
 
-// // // @pragma('vm:entry-point')
-// // // int error(int n) {
-// // //   if (n == 0) throw StateError('n == 0');
-// // //   return n;
-// // // }
+// @pragma('vm:entry-point')
+// int error(int n) {
+//   if (n == 0) throw StateError('n == 0');
+//   return n;
+// }
 
-// // ///
-// // // @pragma('vm:entry-point')
-// // // void isolateFunction(dynamic params) {
-// // //   final channel = IsolateManagerController(params);
-// // //   channel.onIsolateMessage.listen((message) async {
-// // //     // Do more stuff here
+///
+// @pragma('vm:entry-point')
+// void isolateFunction(dynamic params) {
+//   final channel = IsolateManagerController(params);
+//   channel.onIsolateMessage.listen((message) async {
+//     // Do more stuff here
 
-// // //     final result = await fibonacciFuture(message);
+//     final result = await fibonacciFuture(message);
 
-// // //     // Send the result to your [onMessage] stream
-// // //     channel.sendResult(result);
-// // //   });
-// // // }
+//     // Send the result to your [onMessage] stream
+//     channel.sendResult(result);
+//   });
+// }
 
-// // /// Send the progress value before sending the final result
+/// Send the progress value before sending the final result
 
-// // @pragma('vm:entry-point')
-// // void isolateProgressFunction(dynamic params) {
-// //   final channel = IsolateManagerController<String, String>(params);
-// //   channel.onIsolateMessage.listen((message) async {
-// //     double i = double.parse(message);
-// //     final progress = {'progress': i};
-// //     await Future.delayed(const Duration(milliseconds: 100));
-// //     channel.sendResult(jsonEncode(progress));
-// //     final result = {'result': message};
-// //     channel.sendResult(jsonEncode(result));
-// //   });
-// // }
+// @pragma('vm:entry-point')
+// void isolateProgressFunction(dynamic params) {
+//   final channel = IsolateManagerController<String, String>(params);
+//   channel.onIsolateMessage.listen((message) async {
+//     double i = double.parse(message);
+//     final progress = {'progress': i};
+//     await Future.delayed(const Duration(milliseconds: 100));
+//     channel.sendResult(jsonEncode(progress));
+//     final result = {'result': message};
+//     channel.sendResult(jsonEncode(result));
+//   });
+// }
 
-// // class TestIsolate extends StatefulWidget {
-// //   const TestIsolate({Key? key}) : super(key: key);
+// class TestIsolate extends StatefulWidget {
+//   const TestIsolate({Key? key}) : super(key: key);
 
-// //   @override
-// //   State<TestIsolate> createState() => _TestIsolateState();
-// // }
+//   @override
+//   State<TestIsolate> createState() => _TestIsolateState();
+// }
 
-// // class _TestIsolateState extends State<TestIsolate> {
-// //   final isolateProgress = IsolateManager<String, String>.createOwnIsolate(
-// //     isolateProgressFunction,
-// //     isDebug: true,
-// //   );
-// //   double progress = 0;
+// class _TestIsolateState extends State<TestIsolate> {
+//   final isolateProgress = IsolateManager<String, String>.createOwnIsolate(
+//     isolateProgressFunction,
+//     isDebug: true,
+//   );
+//   double progress = 0;
 
-// //   @override
-// //   void initState() {
-// //     initial();
-// //     NotificationUtils.initNotifications();
-// //     super.initState();
-// //   }
+//   @override
+//   void initState() {
+//     initial();
+//     NotificationUtils.initNotifications();
+//     super.initState();
+//   }
 
-// //   @override
-// //   void dispose() {
-// //     isolateProgress.stop();
-// //     super.dispose();
-// //   }
+//   @override
+//   void dispose() {
+//     isolateProgress.stop();
+//     super.dispose();
+//   }
 
-// //   Future<void> initial() async {
-// //     await isolateProgress.start();
-// //   }
+//   Future<void> initial() async {
+//     await isolateProgress.start();
+//   }
 
-// //   void callIsolateProgress(int prog) async {
-// //     setState(() {
-// //       progress = 0;
-// //     });
-// //     bool callback(String value) {
-// //       final decoded = jsonDecode(value) as Map<String, dynamic>;
-// //       if (decoded.containsKey('progress')) {
-// //         double toDouble(dynamic value) {
-// //           if (value is double) return value;
-// //           return double.parse(value.toString());
-// //         }
+//   void callIsolateProgress(int prog) async {
+//     setState(() {
+//       progress = 0;
+//     });
+//     bool callback(String value) {
+//       final decoded = jsonDecode(value) as Map<String, dynamic>;
+//       if (decoded.containsKey('progress')) {
+//         double toDouble(dynamic value) {
+//           if (value is double) return value;
+//           return double.parse(value.toString());
+//         }
 
-// //         setState(() {
-// //           progress = toDouble(decoded['progress']);
-// //         });
-// //         NotificationUtils().showProgressNotification(
-// //             taskId: 4545878, title: 'ali', progress: progress);
-// //         print(value);
+//         setState(() {
+//           progress = toDouble(decoded['progress']);
+//         });
+//         NotificationUtils().showProgressNotification(
+//             taskId: 4545878, title: 'ali', progress: progress);
+//         print(value);
 
-// //         // Mark this value is not the final result
-// //         return false;
-// //       }
+//         // Mark this value is not the final result
+//         return false;
+//       }
 
-// //       return true;
-// //     }
+//       return true;
+//     }
 
-// //     await isolateProgress.compute(prog.toString(), callback: callback);
-// //   }
+//     await isolateProgress.compute(prog.toString(), callback: callback);
+//   }
 
-// //   @override
-// //   Widget build(BuildContext context) {
-// //     return MaterialApp(
-// //       home: Scaffold(
-// //         appBar: AppBar(
-// //           title: const Text('Multi Isolate Fibonacci'),
-// //           centerTitle: true,
-// //         ),
-// //         body: SingleChildScrollView(
-// //           child: Center(
-// //             child: Column(
-// //               mainAxisAlignment: MainAxisAlignment.center,
-// //               children: [
-// //                 const SizedBox(height: 8),
-// //                 // StreamBuilder(
-// //                 //   stream: isolateManager1.stream,
-// //                 //   builder: (context, snapshot) {
-// //                 //     if (!snapshot.hasData) {
-// //                 //       isolateManager1.sendMessage(value1);
-// //                 //       return const Center(
-// //                 //         child: CircularProgressIndicator(),
-// //                 //       );
-// //                 //     }
-// //                 //     return Text(
-// //                 //         'Isolate1: Fibonacci at F$value1 = ${snapshot.data}');
-// //                 //   },
-// //                 // ),
-// //                 ListTile(
-// //                   title: ElevatedButton(
-// //                     onPressed: () {
-// //                       for (var i = 0; i < 100; i++) {
-// //                         callIsolateProgress(i);
-// //                       }
-// //                     },
-// //                     child: StreamBuilder(
-// //                       stream: isolateProgress.stream,
-// //                       builder: (_, snapshot) {
-// //                         if (!snapshot.hasData) {
-// //                           return const Text('Isolate Progress');
-// //                         }
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: const Text('Multi Isolate Fibonacci'),
+//           centerTitle: true,
+//         ),
+//         body: SingleChildScrollView(
+//           child: Center(
+//             child: Column(
+//               mainAxisAlignment: MainAxisAlignment.center,
+//               children: [
+//                 const SizedBox(height: 8),
+//                 // StreamBuilder(
+//                 //   stream: isolateManager1.stream,
+//                 //   builder: (context, snapshot) {
+//                 //     if (!snapshot.hasData) {
+//                 //       isolateManager1.sendMessage(value1);
+//                 //       return const Center(
+//                 //         child: CircularProgressIndicator(),
+//                 //       );
+//                 //     }
+//                 //     return Text(
+//                 //         'Isolate1: Fibonacci at F$value1 = ${snapshot.data}');
+//                 //   },
+//                 // ),
+//                 ListTile(
+//                   title: ElevatedButton(
+//                     onPressed: () {
+//                       for (var i = 0; i < 100; i++) {
+//                         callIsolateProgress(i);
+//                       }
+//                     },
+//                     child: StreamBuilder(
+//                       stream: isolateProgress.stream,
+//                       builder: (_, snapshot) {
+//                         if (!snapshot.hasData) {
+//                           return const Text('Isolate Progress');
+//                         }
 
-// //                         return Text('Isolate Progress: ${snapshot.data}');
-// //                       },
-// //                     ),
-// //                   ),
-// //                   subtitle: LinearProgressIndicator(
-// //                     value: progress / 100,
-// //                   ),
-// //                 ),
-// //               ],
-// //             ),
-// //           ),
-// //         ),
-// //       ),
-// //     );
-// //   }
-// // }
+//                         return Text('Isolate Progress: ${snapshot.data}');
+//                       },
+//                     ),
+//                   ),
+//                   subtitle: LinearProgressIndicator(
+//                     value: progress / 100,
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
-// // class WorkerTest extends StatelessWidget {
-// //   @override
-// //   Widget build(BuildContext context) {
-// //     return MaterialApp(
-// //       title: 'Flutter Demo',
-// //       theme: ThemeData(
-// //         primarySwatch: Colors.blue,
-// //       ),
-// //       home: FileDownloaderScreen(),
-// //     );
-// //   }
-// // }
+// class WorkerTest extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Demo',
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//       ),
+//       home: FileDownloaderScreen(),
+//     );
+//   }
+// }
 
-// // class FileDownloaderScreen extends StatefulWidget {
-// //   FileDownloaderScreen({Key? key}) : super(key: key);
+// class FileDownloaderScreen extends StatefulWidget {
+//   FileDownloaderScreen({Key? key}) : super(key: key);
 
-// //   @override
-// //   _FileDownloaderScreenState createState() => _FileDownloaderScreenState();
-// // }
+//   @override
+//   _FileDownloaderScreenState createState() => _FileDownloaderScreenState();
+// }
 
-// // class _FileDownloaderScreenState extends State<FileDownloaderScreen> {
-// //   final List<DownloadItem> items =
-// //       List.generate(100, (index) => DownloadItem('Item ${index + 1}'));
+// class _FileDownloaderScreenState extends State<FileDownloaderScreen> {
+//   final List<DownloadItem> items =
+//       List.generate(100, (index) => DownloadItem('Item ${index + 1}'));
 
-// //   final Map<DownloadItem, double> itemsDownloadProgress = {};
+//   final Map<DownloadItem, double> itemsDownloadProgress = {};
 
-// //   void notifyProgress(DownloadItemProgressEvent event) {
-// //     final item = event.item;
-// //     if (itemsDownloadProgress.containsKey(item)) {
-// //       itemsDownloadProgress.update(
-// //         item,
-// //         (value) => event.progress,
-// //       );
-// //     } else {
-// //       itemsDownloadProgress.addAll({item: event.progress});
-// //     }
-// //     setState(() {});
-// //   }
+//   void notifyProgress(DownloadItemProgressEvent event) {
+//     final item = event.item;
+//     if (itemsDownloadProgress.containsKey(item)) {
+//       itemsDownloadProgress.update(
+//         item,
+//         (value) => event.progress,
+//       );
+//     } else {
+//       itemsDownloadProgress.addAll({item: event.progress});
+//     }
+//     setState(() {});
+//   }
 
-// //   bool hasOngoingDownload(DownloadItem item) {
-// //     return itemsDownloadProgress.containsKey(item);
-// //   }
+//   bool hasOngoingDownload(DownloadItem item) {
+//     return itemsDownloadProgress.containsKey(item);
+//   }
 
-// //   @override
-// //   Widget build(BuildContext context) {
-// //     final theme = Theme.of(context);
-// //     return Scaffold(
-// //       body: Column(
-// //         children: [
-// //           SizedBox(height: 20),
-// //           Text('File downloader simulation', style: theme.textTheme.headline5),
-// //           SizedBox(height: 20),
-// //           Expanded(
-// //             child: ListView.builder(
-// //               itemCount: items.length,
-// //               itemBuilder: (context, index) {
-// //                 final item = items[index];
-// //                 return Card(
-// //                   child: Padding(
-// //                     padding: EdgeInsets.all(8),
-// //                     child: Row(
-// //                       children: [
-// //                         Text(item.name),
-// //                         Spacer(),
-// //                         Text('${item.size}mb'),
-// //                         SizedBox(width: 10),
-// //                         if (hasOngoingDownload(item))
-// //                           SizedBox(
-// //                             height: 20,
-// //                             width: 20,
-// //                             child: CircularProgressIndicator(
-// //                               value: itemsDownloadProgress[item],
-// //                             ),
-// //                           )
-// //                         else ...[
-// //                           IconButton(
-// //                             icon: Icon(Icons.download),
-// //                             onPressed: () => FileDownloaderWorker(
-// //                               item: item,
-// //                               onNotifyProgress: notifyProgress,
-// //                             ).init(),
-// //                           ),
-// //                         ]
-// //                       ],
-// //                     ),
-// //                   ),
-// //                 );
-// //               },
-// //             ),
-// //           ),
-// //         ],
-// //       ),
-// //     );
-// //   }
-// // }
+//   @override
+//   Widget build(BuildContext context) {
+//     final theme = Theme.of(context);
+//     return Scaffold(
+//       body: Column(
+//         children: [
+//           SizedBox(height: 20),
+//           Text('File downloader simulation', style: theme.textTheme.headline5),
+//           SizedBox(height: 20),
+//           Expanded(
+//             child: ListView.builder(
+//               itemCount: items.length,
+//               itemBuilder: (context, index) {
+//                 final item = items[index];
+//                 return Card(
+//                   child: Padding(
+//                     padding: EdgeInsets.all(8),
+//                     child: Row(
+//                       children: [
+//                         Text(item.name),
+//                         Spacer(),
+//                         Text('${item.size}mb'),
+//                         SizedBox(width: 10),
+//                         if (hasOngoingDownload(item))
+//                           SizedBox(
+//                             height: 20,
+//                             width: 20,
+//                             child: CircularProgressIndicator(
+//                               value: itemsDownloadProgress[item],
+//                             ),
+//                           )
+//                         else ...[
+//                           IconButton(
+//                             icon: Icon(Icons.download),
+//                             onPressed: () => FileDownloaderWorker(
+//                               item: item,
+//                               onNotifyProgress: notifyProgress,
+//                             ).init(),
+//                           ),
+//                         ]
+//                       ],
+//                     ),
+//                   ),
+//                 );
+//               },
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
 
-// // class DownloadItem {
-// //   DownloadItem(this.name) : size = Random().nextInt(50);
+// class DownloadItem {
+//   DownloadItem(this.name) : size = Random().nextInt(50);
 
-// //   final String name;
-// //   final int size;
+//   final String name;
+//   final int size;
 
-// //   @override
-// //   bool operator ==(Object other) =>
-// //       identical(this, other) ||
-// //       (other is DownloadItem &&
-// //           runtimeType == other.runtimeType &&
-// //           name == other.name &&
-// //           size == other.size);
+//   @override
+//   bool operator ==(Object other) =>
+//       identical(this, other) ||
+//       (other is DownloadItem &&
+//           runtimeType == other.runtimeType &&
+//           name == other.name &&
+//           size == other.size);
 
-// //   @override
-// //   int get hashCode => name.hashCode ^ size.hashCode;
-// // }
+//   @override
+//   int get hashCode => name.hashCode ^ size.hashCode;
+// }
 
-// // class FileDownloaderWorker {
-// //   FileDownloaderWorker({required this.onNotifyProgress, required this.item});
+// class FileDownloaderWorker {
+//   FileDownloaderWorker({required this.onNotifyProgress, required this.item});
 
-// //   final Function(DownloadItemProgressEvent event) onNotifyProgress;
-// //   final DownloadItem item;
-// //   final worker = Worker();
+//   final Function(DownloadItemProgressEvent event) onNotifyProgress;
+//   final DownloadItem item;
+//   final worker = Worker();
 
-// //   /// Initiate the worker (new thread) and start listen from messages between
-// //   /// the threads
-// //   Future<void> init() async {
-// //     await worker.init(
-// //       mainMessageHandler,
-// //       isolateMessageHandler,
-// //       errorHandler: print,
-// //     );
-// //     worker.sendMessage(DownloadItemEvent(item));
-// //   }
+//   /// Initiate the worker (new thread) and start listen from messages between
+//   /// the threads
+//   Future<void> init() async {
+//     await worker.init(
+//       mainMessageHandler,
+//       isolateMessageHandler,
+//       errorHandler: print,
+//     );
+//     worker.sendMessage(DownloadItemEvent(item));
+//   }
 
-// //   /// Handle the messages coming from the isolate
-// //   void mainMessageHandler(dynamic data, SendPort isolateSendPort) {
-// //     if (data is DownloadItemProgressEvent) {
-// //       onNotifyProgress(data);
-// //     }
-// //   }
+//   /// Handle the messages coming from the isolate
+//   void mainMessageHandler(dynamic data, SendPort isolateSendPort) {
+//     if (data is DownloadItemProgressEvent) {
+//       onNotifyProgress(data);
+//     }
+//   }
 
-// //   /// Handle the messages coming from the main
-// //   static isolateMessageHandler(
-// //       dynamic data, SendPort mainSendPort, SendErrorFunction sendError) async {
-// //     if (data is DownloadItemEvent) {
-// //       final fragmentTime = 1 / data.item.size;
-// //       double progress = 0;
-// //       Timer.periodic(
-// //         Duration(seconds: 1),
-// //         (timer) {
-// //           if (progress < 1) {
-// //             progress += fragmentTime;
-// //             mainSendPort.send(DownloadItemProgressEvent(data.item, progress));
-// //           } else {
-// //             timer.cancel();
-// //           }
-// //         },
-// //       );
-// //     }
-// //   }
-// // }
+//   /// Handle the messages coming from the main
+//   static isolateMessageHandler(
+//       dynamic data, SendPort mainSendPort, SendErrorFunction sendError) async {
+//     if (data is DownloadItemEvent) {
+//       final fragmentTime = 1 / data.item.size;
+//       double progress = 0;
+//       Timer.periodic(
+//         Duration(seconds: 1),
+//         (timer) {
+//           if (progress < 1) {
+//             progress += fragmentTime;
+//             mainSendPort.send(DownloadItemProgressEvent(data.item, progress));
+//           } else {
+//             timer.cancel();
+//           }
+//         },
+//       );
+//     }
+//   }
+// }
 
-// // class DownloadItemEvent {
-// //   DownloadItemEvent(this.item);
+// class DownloadItemEvent {
+//   DownloadItemEvent(this.item);
 
-// //   final DownloadItem item;
-// // }
+//   final DownloadItem item;
+// }
 
-// // class DownloadItemProgressEvent {
-// //   DownloadItemProgressEvent(this.item, this.progress);
+// class DownloadItemProgressEvent {
+//   DownloadItemProgressEvent(this.item, this.progress);
 
-// //   final DownloadItem item;
-// //   final double progress;
-// // }
+//   final DownloadItem item;
+//   final double progress;
+// }
 
-// // class IsolateTest {
-// //   Future<void> start(String sta) async {
-// //     print('start------------------');
-// //     final worker = Worker();
-// //     if (sta == 'start') {
-// //       await worker.init(mainHandler, isolateHandler);
-// //     } else {
-// //       worker.dispose();
-// //     }
-// //     var path = await Components().getPath('');
-// //     //CancelToken cancelToken = CancelToken();
-// //     Map data = {'statue': "start", 'path': path};
-// //     worker.sendMessage(data);
-// //   }
+// class IsolateTest {
+//   Future<void> start(String sta) async {
+//     print('start------------------');
+//     final worker = Worker();
+//     if (sta == 'start') {
+//       await worker.init(mainHandler, isolateHandler);
+//     } else {
+//       worker.dispose();
+//     }
+//     var path = await Components().getPath('');
+//     //CancelToken cancelToken = CancelToken();
+//     Map data = {'statue': "start", 'path': path};
+//     worker.sendMessage(data);
+//   }
 
-// //   void mainHandler(dynamic data, SendPort isolateSendPort) {
-// //     NotificationUtils()
-// //         .showProgressNotification(taskId: 65656, title: 'ali', progress: 5.0);
-// //     print(data);
-// //     Map map = {'statue': "CANCELLING", 'path': ''};
-// //     Future.delayed(Duration(seconds: 10), () {
-// //       isolateSendPort.send(map);
-// //     });
-// //   }
+//   void mainHandler(dynamic data, SendPort isolateSendPort) {
+//     NotificationUtils()
+//         .showProgressNotification(taskId: 65656, title: 'ali', progress: 5.0);
+//     print(data);
+//     Map map = {'statue': "CANCELLING", 'path': ''};
+//     Future.delayed(Duration(seconds: 10), () {
+//       isolateSendPort.send(map);
+//     });
+//   }
 
-// //   Future<void> isolateHandler(dynamic data, SendPort mainSendPort,
-// //       SendErrorFunction onSendError) async {
-// //     CancelToken cancelToken = CancelToken();
-// //     Dio dio = Dio();
-// //     var map = data as Map;
-// //     if (data["statue"] == "CANCELLING") {
-// //       cancelToken.cancel();
-// //     }
-// //     // cancelToken = map["CancelToken"] as CancelToken;
-// //     if (!cancelToken.isCancelled) {
-// //       if (map["statue"] == 'start') {
-// //         var path = map["path"];
-// //         var url =
-// //             "https://rr1---sn-txhxooxu-n5il.googlevideo.com/videoplayback?expire=1695874281&ei=iagUZdqMDIbDx_AP5suciA4&ip=134.35.82.202&id=o-AN7cduC8FAGW2DgCnSD7DY8MDyeP3HT-QCdZ4fb6Tz9f&itag=247&aitags=133%2C134%2C135%2C136%2C137%2C160%2C242%2C243%2C244%2C247%2C248%2C278&source=youtube&requiressl=yes&mh=OD&mm=31%2C29&mn=sn-txhxooxu-n5il%2Csn-hju7en7r&ms=au%2Crdu&mv=m&mvi=1&pcm2cms=yes&pl=21&initcwndbps=67500&siu=1&spc=UWF9f1GpjWhLyQfthFO14FuFjMNYoyYc6K267BlcK5e4FtRgi-bdhPQ&vprv=1&svpuc=1&mime=video%2Fwebm&ns=sH-tyGO7frntrQN5l2vy_OwP&gir=yes&clen=29818367&dur=909.808&lmt=1652397882094004&mt=1695852307&fvip=2&keepalive=yes&fexp=24007246&beids=24350017&c=WEB&txp=5437434&n=YGdeqIhFVQoQyw&sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Csiu%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRQIgfjsJpYJNlzPdBF3N6HJR_qQDDFSWB8NyHpatCJsZ3mUCIQCDYagpAPzSuVVzgg9GXAyTfxPt_RzbSr41EXHpP8tGhQ%3D%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpcm2cms%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRQIhAKaqyA_11ftkUY05A2CEgYg3KwbDt6h7tbreWRuoSwTUAiB6s8kzt08hEZRrM3adQiTu5sZHsOkj4yn2ga3r28AE7g%3D%3D&alr=yes&cpn=W0qTZbZQSPL_XRRG&cver=2.20230925.02.00&rn=10&pot=Ml9KABOi8ma7M0o8k-zfCvoxh4yxeVSL2T6IapMlqu1C1-mYAfznMRsZNQVq-0MHLFH5P_kAJaJ8kpsmnDOHoN57lHrtOt0DH7YyWBfPShNgdPpIdUuETPByeWs520L6uQ==&srfvp=1";
-// //         await dio.download(
-// //           url,
-// //           "$path/test.mp4",
-// //           deleteOnError: false,
-// //           cancelToken: cancelToken,
-// //           onReceiveProgress: (count, total) {
-// //             mainSendPort.send('{prog:${count / total * 100} }');
-// //           },
-// //         );
-// //       }
-// //     }
-// //     //for (var i = 0; i < 100; i++) {
-// //     //print(i);
-// //     // mainSendPort.send('fine what about you?');
-// //     print(map);
-// //     //}
-// //   }
-// // }
+//   Future<void> isolateHandler(dynamic data, SendPort mainSendPort,
+//       SendErrorFunction onSendError) async {
+//     CancelToken cancelToken = CancelToken();
+//     Dio dio = Dio();
+//     var map = data as Map;
+//     if (data["statue"] == "CANCELLING") {
+//       cancelToken.cancel();
+//     }
+//     // cancelToken = map["CancelToken"] as CancelToken;
+//     if (!cancelToken.isCancelled) {
+//       if (map["statue"] == 'start') {
+//         var path = map["path"];
+//         var url =
+//             "https://rr1---sn-txhxooxu-n5il.googlevideo.com/videoplayback?expire=1695874281&ei=iagUZdqMDIbDx_AP5suciA4&ip=134.35.82.202&id=o-AN7cduC8FAGW2DgCnSD7DY8MDyeP3HT-QCdZ4fb6Tz9f&itag=247&aitags=133%2C134%2C135%2C136%2C137%2C160%2C242%2C243%2C244%2C247%2C248%2C278&source=youtube&requiressl=yes&mh=OD&mm=31%2C29&mn=sn-txhxooxu-n5il%2Csn-hju7en7r&ms=au%2Crdu&mv=m&mvi=1&pcm2cms=yes&pl=21&initcwndbps=67500&siu=1&spc=UWF9f1GpjWhLyQfthFO14FuFjMNYoyYc6K267BlcK5e4FtRgi-bdhPQ&vprv=1&svpuc=1&mime=video%2Fwebm&ns=sH-tyGO7frntrQN5l2vy_OwP&gir=yes&clen=29818367&dur=909.808&lmt=1652397882094004&mt=1695852307&fvip=2&keepalive=yes&fexp=24007246&beids=24350017&c=WEB&txp=5437434&n=YGdeqIhFVQoQyw&sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Csiu%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRQIgfjsJpYJNlzPdBF3N6HJR_qQDDFSWB8NyHpatCJsZ3mUCIQCDYagpAPzSuVVzgg9GXAyTfxPt_RzbSr41EXHpP8tGhQ%3D%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpcm2cms%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRQIhAKaqyA_11ftkUY05A2CEgYg3KwbDt6h7tbreWRuoSwTUAiB6s8kzt08hEZRrM3adQiTu5sZHsOkj4yn2ga3r28AE7g%3D%3D&alr=yes&cpn=W0qTZbZQSPL_XRRG&cver=2.20230925.02.00&rn=10&pot=Ml9KABOi8ma7M0o8k-zfCvoxh4yxeVSL2T6IapMlqu1C1-mYAfznMRsZNQVq-0MHLFH5P_kAJaJ8kpsmnDOHoN57lHrtOt0DH7YyWBfPShNgdPpIdUuETPByeWs520L6uQ==&srfvp=1";
+//         await dio.download(
+//           url,
+//           "$path/test.mp4",
+//           deleteOnError: false,
+//           cancelToken: cancelToken,
+//           onReceiveProgress: (count, total) {
+//             mainSendPort.send('{prog:${count / total * 100} }');
+//           },
+//         );
+//       }
+//     }
+//     //for (var i = 0; i < 100; i++) {
+//     //print(i);
+//     // mainSendPort.send('fine what about you?');
+//     print(map);
+//     //}
+//   }
+// }
 
 // import 'dart:convert';
 

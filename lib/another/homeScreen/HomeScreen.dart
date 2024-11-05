@@ -34,7 +34,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> getSearch() async {
     itemSearch.clear();
     final provider = Provider.of<ProviderDownload>(context, listen: false);
-    await api.GetAllData("select * from search").then((value) {
+    await api.GetAllData("select * from search order by date_search desc")
+        .then((value) {
       setState(() {
         value.forEach((element) {
           setState(() {
